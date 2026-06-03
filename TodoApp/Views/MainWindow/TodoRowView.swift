@@ -6,12 +6,9 @@ struct TodoRowView: View {
 
     let onToggle: () -> Void
     let onDelete: () -> Void
-    let onUpdate: (_ title: String, _ priority: Int16, _ dueDate: Date?) -> Void
+    let onEdit: () -> Void
 
-    @State private var isEditingTitle = false
-    @State private var draftTitle = ""
     @State private var isHovering = false
-    @FocusState private var isTitleFocused: Bool
 
     var body: some View {
         HStack(spacing: Theme.spacingS) {
@@ -33,7 +30,12 @@ struct TodoRowView: View {
         .clipShape(RoundedRectangle(cornerRadius: Theme.radiusItem, style: .continuous))
         .contentShape(Rectangle())
         .onHover { isHovering = $0 }
+        .onTapGesture(count: 2, perform: onEdit)
         .contextMenu {
+            Button("编辑") {
+                onEdit()
+            }
+
             Button("删除", role: .destructive) {
                 onDelete()
             }
@@ -54,26 +56,12 @@ struct TodoRowView: View {
         .accessibilityLabel(item.isCompleted ? "标记为未完成" : "标记为已完成")
     }
 
-    @ViewBuilder
     private var titleContent: some View {
-        if isEditingTitle {
-            TextField("标题", text: $draftTitle)
-                .font(Theme.rounded(.body))
-                .textFieldStyle(.plain)
-                .focused($isTitleFocused)
-                .onAppear {
-                    isTitleFocused = true
-                }
-                .onSubmit(commitTitle)
-                .onExitCommand(perform: cancelTitleEdit)
-        } else {
-            Text(item.title ?? "")
-                .font(Theme.rounded(.body))
-                .foregroundStyle(item.isCompleted ? Color.secondary : Color.primary)
-                .strikethrough(item.isCompleted, color: .secondary)
-                .lineLimit(2)
-                .onTapGesture(count: 2, perform: beginTitleEdit)
-        }
+        Text(item.title ?? "")
+            .font(Theme.rounded(.body))
+            .foregroundStyle(item.isCompleted ? Color.secondary : Color.primary)
+            .strikethrough(item.isCompleted, color: .secondary)
+            .lineLimit(2)
     }
 
     private var priorityBadge: some View {
@@ -120,26 +108,4 @@ struct TodoRowView: View {
         }
     }
 
-    private func beginTitleEdit() {
-        draftTitle = item.title ?? ""
-        isEditingTitle = true
-    }
-
-    private func commitTitle() {
-        let trimmedTitle = draftTitle.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmedTitle.isEmpty else {
-            cancelTitleEdit()
-            return
-        }
-
-        onUpdate(trimmedTitle, item.priority, item.dueDate)
-        isEditingTitle = false
-        isTitleFocused = false
-    }
-
-    private func cancelTitleEdit() {
-        isEditingTitle = false
-        draftTitle = ""
-        isTitleFocused = false
-    }
 }

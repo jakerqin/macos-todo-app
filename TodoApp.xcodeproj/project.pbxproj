@@ -20,6 +20,7 @@
 		4D1F5E582C0F000100000002 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E572C0F000100000002 /* HotkeyManager.swift */; };
 		4D1F5E5A2C0F000100000002 /* QuickInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E592C0F000100000002 /* QuickInputView.swift */; };
 		4D1F5E5C2C0F000100000002 /* QuickInputPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E5B2C0F000100000002 /* QuickInputPanel.swift */; };
+		4D1F5E5F2C0F000100000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F5E5E2C0F000100000002 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4D1F5E572C0F000100000002 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
 		4D1F5E592C0F000100000002 /* QuickInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickInputView.swift; sourceTree = "<group>"; };
 		4D1F5E5B2C0F000100000002 /* QuickInputPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickInputPanel.swift; sourceTree = "<group>"; };
+		4D1F5E5E2C0F000100000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1F5E312C0F000100000002 /* TodoAppApp.swift */,
+				4D1F5E5E2C0F000100000002 /* Assets.xcassets */,
 				4D1F5E472C0F000100000002 /* Models */,
 				4D1F5E482C0F000100000002 /* Services */,
 				4D1F5E502C0F000100000002 /* ViewModels */,
@@ -205,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1F5E5F2C0F000100000002 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +368,7 @@
 		4D1F5E352C0F000100000002 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				CODE_SIGNING_ALLOWED = NO;
@@ -386,6 +391,7 @@
 		4D1F5E362C0F000100000002 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				CODE_SIGNING_ALLOWED = NO;
