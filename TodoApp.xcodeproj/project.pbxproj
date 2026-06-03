@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D1F5E322C0F000100000002 /* TodoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E312C0F000100000002 /* TodoAppApp.swift */; };
+		4D1F5E3A2C0F000100000002 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1F5E392C0F000100000002 /* HotKey */; };
+		4D1F5E412C0F000100000002 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E402C0F000100000002 /* PersistenceController.swift */; };
+		4D1F5E432C0F000100000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E422C0F000100000002 /* ContentView.swift */; };
+		4D1F5E462C0F000100000002 /* TodoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E452C0F000100000002 /* TodoApp.xcdatamodeld */; };
+		4D1F5E4C2C0F000100000002 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E4B2C0F000100000002 /* Theme.swift */; };
+		4D1F5E4F2C0F000100000002 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E4E2C0F000100000002 /* TodoViewModel.swift */; };
+		4D1F5E522C0F000100000002 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E512C0F000100000002 /* SidebarView.swift */; };
+		4D1F5E542C0F000100000002 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E532C0F000100000002 /* TodoRowView.swift */; };
+		4D1F5E562C0F000100000002 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E552C0F000100000002 /* TodoListView.swift */; };
+		4D1F5E582C0F000100000002 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E572C0F000100000002 /* HotkeyManager.swift */; };
+		4D1F5E5A2C0F000100000002 /* QuickInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E592C0F000100000002 /* QuickInputView.swift */; };
+		4D1F5E5C2C0F000100000002 /* QuickInputPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F5E5B2C0F000100000002 /* QuickInputPanel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4D1F5E2E2C0F000100000002 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D1F5E312C0F000100000002 /* TodoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppApp.swift; sourceTree = "<group>"; };
+		4D1F5E402C0F000100000002 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		4D1F5E422C0F000100000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4D1F5E442C0F000100000002 /* TodoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoApp.xcdatamodel; sourceTree = "<group>"; };
+		4D1F5E4B2C0F000100000002 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		4D1F5E4E2C0F000100000002 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		4D1F5E512C0F000100000002 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		4D1F5E532C0F000100000002 /* TodoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowView.swift; sourceTree = "<group>"; };
+		4D1F5E552C0F000100000002 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		4D1F5E572C0F000100000002 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		4D1F5E592C0F000100000002 /* QuickInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickInputView.swift; sourceTree = "<group>"; };
+		4D1F5E5B2C0F000100000002 /* QuickInputPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickInputPanel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D1F5E2B2C0F000100000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D1F5E3A2C0F000100000002 /* HotKey in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D1F5E252C0F000100000002 = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E302C0F000100000002 /* TodoApp */,
+				4D1F5E2F2C0F000100000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D1F5E2F2C0F000100000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E2E2C0F000100000002 /* TodoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D1F5E302C0F000100000002 /* TodoApp */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E312C0F000100000002 /* TodoAppApp.swift */,
+				4D1F5E472C0F000100000002 /* Models */,
+				4D1F5E482C0F000100000002 /* Services */,
+				4D1F5E502C0F000100000002 /* ViewModels */,
+				4D1F5E4D2C0F000100000002 /* Utilities */,
+				4D1F5E492C0F000100000002 /* Views */,
+			);
+			path = TodoApp;
+			sourceTree = "<group>";
+		};
+		4D1F5E472C0F000100000002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E452C0F000100000002 /* TodoApp.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D1F5E482C0F000100000002 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E402C0F000100000002 /* PersistenceController.swift */,
+				4D1F5E572C0F000100000002 /* HotkeyManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4D1F5E492C0F000100000002 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E4A2C0F000100000002 /* MainWindow */,
+				4D1F5E5D2C0F000100000002 /* QuickInput */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D1F5E4A2C0F000100000002 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E422C0F000100000002 /* ContentView.swift */,
+				4D1F5E512C0F000100000002 /* SidebarView.swift */,
+				4D1F5E532C0F000100000002 /* TodoRowView.swift */,
+				4D1F5E552C0F000100000002 /* TodoListView.swift */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		4D1F5E5D2C0F000100000002 /* QuickInput */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E592C0F000100000002 /* QuickInputView.swift */,
+				4D1F5E5B2C0F000100000002 /* QuickInputPanel.swift */,
+			);
+			path = QuickInput;
+			sourceTree = "<group>";
+		};
+		4D1F5E4D2C0F000100000002 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E4B2C0F000100000002 /* Theme.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4D1F5E502C0F000100000002 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F5E4E2C0F000100000002 /* TodoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D1F5E2D2C0F000100000002 /* TodoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D1F5E372C0F000100000002 /* Build configuration list for PBXNativeTarget "TodoApp" */;
+			buildPhases = (
+				4D1F5E2A2C0F000100000002 /* Sources */,
+				4D1F5E2B2C0F000100000002 /* Frameworks */,
+				4D1F5E2C2C0F000100000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodoApp;
+			packageProductDependencies = (
+				4D1F5E392C0F000100000002 /* HotKey */,
+			);
+			productName = TodoApp;
+			productReference = 4D1F5E2E2C0F000100000002 /* TodoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D1F5E262C0F000100000002 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					4D1F5E2D2C0F000100000002 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 4D1F5E292C0F000100000002 /* Build configuration list for PBXProject "TodoApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D1F5E252C0F000100000002;
+			packageReferences = (
+				4D1F5E382C0F000100000002 /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
+			productRefGroup = 4D1F5E2F2C0F000100000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D1F5E2D2C0F000100000002 /* TodoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D1F5E2C2C0F000100000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D1F5E2A2C0F000100000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D1F5E322C0F000100000002 /* TodoAppApp.swift in Sources */,
+				4D1F5E412C0F000100000002 /* PersistenceController.swift in Sources */,
+				4D1F5E432C0F000100000002 /* ContentView.swift in Sources */,
+				4D1F5E4C2C0F000100000002 /* Theme.swift in Sources */,
+				4D1F5E4F2C0F000100000002 /* TodoViewModel.swift in Sources */,
+				4D1F5E522C0F000100000002 /* SidebarView.swift in Sources */,
+				4D1F5E542C0F000100000002 /* TodoRowView.swift in Sources */,
+				4D1F5E562C0F000100000002 /* TodoListView.swift in Sources */,
+				4D1F5E582C0F000100000002 /* HotkeyManager.swift in Sources */,
+				4D1F5E5A2C0F000100000002 /* QuickInputView.swift in Sources */,
+				4D1F5E5C2C0F000100000002 /* QuickInputPanel.swift in Sources */,
+				4D1F5E462C0F000100000002 /* TodoApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCVersionGroup section */
+		4D1F5E452C0F000100000002 /* TodoApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4D1F5E442C0F000100000002 /* TodoApp.xcdatamodel */,
+			);
+			currentVersion = 4D1F5E442C0F000100000002 /* TodoApp.xcdatamodel */;
+			path = TodoApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D1F5E332C0F000100000002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D1F5E342C0F000100000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4D1F5E352C0F000100000002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TodoApp;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "TodoApp 需要权限以支持全局快捷键";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourname.todoapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4D1F5E362C0F000100000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TodoApp;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "TodoApp 需要权限以支持全局快捷键";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourname.todoapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D1F5E292C0F000100000002 /* Build configuration list for PBXProject "TodoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D1F5E332C0F000100000002 /* Debug */,
+				4D1F5E342C0F000100000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D1F5E372C0F000100000002 /* Build configuration list for PBXNativeTarget "TodoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D1F5E352C0F000100000002 /* Debug */,
+				4D1F5E362C0F000100000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D1F5E382C0F000100000002 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D1F5E392C0F000100000002 /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D1F5E382C0F000100000002 /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4D1F5E262C0F000100000002 /* Project object */;
+}
