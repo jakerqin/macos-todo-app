@@ -14,22 +14,7 @@ struct TodoListView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            toolbar
-
-            Divider()
-
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 6) {
-                    ForEach(activeTodos, id: \.objectID) { item in
-                        row(for: item)
-                    }
-
-                    if !completedTodos.isEmpty {
-                        completedSection
-                    }
-                }
-                .padding(Theme.spacingS)
-            }
+            todoScrollView
         }
         .sheet(isPresented: $showAddSheet, onDismiss: resetNewTodoState) {
             addTodoSheet
@@ -37,20 +22,31 @@ struct TodoListView: View {
         .navigationTitle(category.name ?? "")
     }
 
-    private var toolbar: some View {
-        HStack {
-            Button {
-                showAddSheet = true
-            } label: {
-                Label("新待办项", systemImage: "plus")
-                    .font(Theme.rounded(.body, weight: .semibold))
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(Theme.accentStart)
+    private var todoScrollView: some View {
+        GeometryReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    LazyVStack(alignment: .leading, spacing: 6) {
+                        ForEach(activeTodos, id: \.objectID) { item in
+                            row(for: item)
+                        }
 
-            Spacer()
+                        if !completedTodos.isEmpty {
+                            completedSection
+                        }
+                    }
+                    .padding(Theme.spacingS)
+
+                    Spacer(minLength: 0)
+                        .frame(maxWidth: .infinity)
+                        .contentShape(Rectangle())
+                        .onTapGesture(count: 2) {
+                            showAddSheet = true
+                        }
+                }
+                .frame(maxWidth: .infinity, minHeight: proxy.size.height, alignment: .topLeading)
+            }
         }
-        .padding(Theme.spacingM)
     }
 
     private var completedSection: some View {
