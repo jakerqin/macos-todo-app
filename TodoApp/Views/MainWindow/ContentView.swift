@@ -24,7 +24,7 @@ struct ContentView: View {
             if let category = selectedCategory {
                 TodoListView(category: category, vm: vm)
             } else {
-                ContentUnavailableView("选择一个分类", systemImage: "list.bullet")
+                emptyState
             }
         }
         .frame(minWidth: 720, minHeight: 480)
@@ -33,5 +33,18 @@ struct ContentView: View {
                 selectedCategory = categories.first
             }
         }
+    }
+
+    private var emptyState: some View {
+        VStack(spacing: Theme.spacingS) {
+            Image(systemName: "list.bullet")
+                .font(.system(size: 36, weight: .medium))
+                .foregroundStyle(.secondary)
+
+            Text("选择一个分类")
+                .font(Theme.rounded(.title3, weight: .semibold))
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
