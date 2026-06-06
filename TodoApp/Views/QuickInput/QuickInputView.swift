@@ -13,6 +13,7 @@ struct QuickInputView: View {
     @State private var title = ""
     @State private var priority: Int16 = 1
     @State private var dueDate: Date?
+    @State private var showingDueDatePicker = false
 
     private var vm: TodoViewModel {
         TodoViewModel(context: context)
@@ -38,7 +39,7 @@ struct QuickInputView: View {
 
             footer
         }
-        .frame(width: 360)
+        .frame(width: 460)
         .background(.regularMaterial)
         .clipShape(RoundedRectangle(cornerRadius: Theme.radiusPanel, style: .continuous))
         .onAppear {
@@ -51,23 +52,25 @@ struct QuickInputView: View {
 
     private var header: some View {
         HStack(spacing: Theme.spacingS) {
+            Button(action: onClose) {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                    .frame(width: 32, height: 32)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel("关闭")
+            }
+            .buttonStyle(.plain)
+
+            Spacer()
+
             Picker("", selection: $selectedCategory) {
                 ForEach(categories, id: \.objectID) { category in
                     Text(category.name ?? "").tag(Optional(category))
                 }
             }
             .labelsHidden()
-            .frame(maxWidth: 180)
-
-            Spacer()
-
-            Button(action: onClose) {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundStyle(.secondary)
-                    .accessibilityLabel("关闭")
-            }
-            .buttonStyle(.plain)
+            .frame(width: 230)
         }
         .padding(.horizontal, Theme.spacingM)
         .padding(.top, Theme.spacingM)
@@ -91,20 +94,53 @@ struct QuickInputView: View {
                 Text("高").tag(Int16(2))
             }
             .pickerStyle(.segmented)
-            .frame(width: 140)
+            .frame(width: 150)
 
             Spacer()
 
-            Toggle("截止", isOn: hasDueDateBinding)
-                .font(Theme.rounded(.callout))
-
-            if dueDate != nil {
-                DatePicker("", selection: dueDateBinding, displayedComponents: .date)
-                    .labelsHidden()
-            }
+            dueDateControl
         }
         .padding(.horizontal, Theme.spacingM)
         .padding(.vertical, Theme.spacingS)
+    }
+
+    private var dueDateControl: some View {
+        HStack(spacing: Theme.spacingS) {
+            Toggle("截止", isOn: hasDueDateBinding)
+                .font(Theme.rounded(.callout))
+                .fixedSize()
+
+            if dueDate != nil {
+                Button {
+                    showingDueDatePicker.toggle()
+                } label: {
+                    HStack(spacing: 6) {
+                        Image(systemName: "calendar")
+                            .font(.system(size: 12, weight: .semibold))
+
+                        Text(dueDateText)
+                            .font(Theme.rounded(.callout, weight: .medium))
+                            .lineLimit(1)
+                    }
+                    .foregroundStyle(Theme.accentStart)
+                    .padding(.horizontal, Theme.spacingS)
+                    .padding(.vertical, 6)
+                    .background(Theme.accentStart.opacity(0.12), in: Capsule())
+                }
+                .buttonStyle(.plain)
+                .popover(isPresented: $showingDueDatePicker, arrowEdge: .bottom) {
+                    DatePicker(
+                        "截止日期",
+                        selection: dueDateBinding,
+                        displayedComponents: .date
+                    )
+                    .datePickerStyle(.graphical)
+                    .labelsHidden()
+                    .padding(Theme.spacingM)
+                    .frame(width: 300)
+                }
+            }
+        }
     }
 
     private var todoList: some View {
@@ -116,7 +152,7 @@ struct QuickInputView: View {
             }
             .padding(.vertical, Theme.spacingS)
         }
-        .frame(maxHeight: 200)
+        .frame(maxHeight: 280)
     }
 
     private var footer: some View {
@@ -168,11 +204,19 @@ struct QuickInputView: View {
         title.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
+    private var dueDateText: String {
+        guard let dueDate else { return "" }
+        return dueDate.formatted(.dateTime.year().month().day())
+    }
+
     private var hasDueDateBinding: Binding<Bool> {
         Binding {
             dueDate != nil
         } set: { hasDueDate in
             dueDate = hasDueDate ? (dueDate ?? Date()) : nil
+            if !hasDueDate {
+                showingDueDatePicker = false
+            }
         }
     }
 
@@ -202,5 +246,6 @@ struct QuickInputView: View {
         title = ""
         priority = 1
         dueDate = nil
+        showingDueDatePicker = false
     }
 }

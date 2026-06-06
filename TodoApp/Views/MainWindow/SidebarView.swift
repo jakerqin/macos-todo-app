@@ -17,33 +17,49 @@ struct SidebarView: View {
 
     var body: some View {
         List(selection: $selectedCategory) {
-            ForEach(categories) { category in
-                categoryRow(category)
-                    .tag(category)
+            Section {
+                ForEach(categories) { category in
+                    categoryRow(category)
+                        .tag(category)
+                }
+                .onMove(perform: moveCategories)
+            } header: {
+                categoryListHeader
             }
-            .onMove(perform: moveCategories)
         }
         .listStyle(.sidebar)
-        .safeAreaInset(edge: .bottom) {
-            addCategoryButton
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                addCategoryButton
+                    .padding(.leading, -72)
+            }
         }
         .sheet(isPresented: $showingAddSheet, onDismiss: resetNewCategoryName) {
             addCategorySheet
         }
     }
 
+    private var categoryListHeader: some View {
+        Text("分类列表")
+            .font(Theme.rounded(.caption, weight: .semibold))
+            .foregroundStyle(.secondary)
+            .padding(.top, 2)
+    }
+
     private var addCategoryButton: some View {
         Button {
             showingAddSheet = true
         } label: {
-            Label("新分类", systemImage: "plus")
-                .font(Theme.rounded(.callout, weight: .semibold))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.vertical, Theme.spacingS)
-                .padding(.horizontal, Theme.spacingM)
+            Image(systemName: "plus")
+                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .foregroundStyle(Theme.accentStart)
+                .frame(width: 28, height: 28)
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .background(.thinMaterial)
+        .controlSize(.regular)
+        .help("新建分类")
+        .accessibilityLabel("新建分类")
     }
 
     private var addCategorySheet: some View {
